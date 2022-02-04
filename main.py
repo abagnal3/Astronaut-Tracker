@@ -21,8 +21,13 @@ webbrowser.open('in_space.txt')
 # need to implement Shenzhou 13 and track it together with the ISS /separate above astronauts by craft
 
 screen = turtle.Screen()
-screen.setup( 1280,720)
-screen.setworldcoordinates(-188,-99,188,99)
+screen.setup(width = 1.0, height = 1.0)
+#screen.setworldcoordinates(-200,-100,200,100)
+
+#remove close,minimaze,maximaze buttons:
+canvas = screen.getcanvas()
+root = canvas.winfo_toplevel()
+root.overrideredirect(1)
 
 screen.bgpic('physical-world-map.gif')
 screen.register_shape('iss_icon.gif')
