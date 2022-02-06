@@ -9,8 +9,7 @@ url = 'http://api.open-notify.org/astros.json'
 response = urllib.request.urlopen(url)
 result = json.loads(response.read())
 file = open('in_space.txt', 'w')
-file.write('There are ' +
-           str(result['number']) + ' astronauts in space at the moment: \n\n')
+file.write('There are ' + str(result['number']) + ' astronauts in space at the moment: \n\n')
 people = result['people']
 for p in people:
     file.write(p['name']+ '' + '\n')
@@ -57,8 +56,7 @@ while True:
     # Update the ISS location on the map
     iss.goto(lon, lat)
 
-    # Refresh every 4 seconds
-    time.sleep(4)
-
+    # Refresh every 5 seconds
+    time.sleep(5)
 
 
