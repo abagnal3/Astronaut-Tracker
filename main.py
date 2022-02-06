@@ -1,8 +1,8 @@
-import json # deals with data pulled from api
-import turtle # displays the graphics
+import json # Deals with data pulled from api
+import turtle # Displays the graphics
 import time
-import urllib.request # deals with data pulled from api
-import webbrowser # opens txt file into full application
+import urllib.request # Deals with data pulled from api
+import webbrowser # Opens txt file into full application
 
 
 url = 'http://api.open-notify.org/astros.json'
@@ -16,14 +16,13 @@ for p in people:
 file.close()
 webbrowser.open('in_space.txt')
 
-# Next is the world map and ISS icon
-# need to implement Shenzhou 13 and track it together with the ISS /separate above astronauts by craft
+# World map and ISS icon
 
 screen = turtle.Screen()
-screen.setup(width = 1.0, height = 1.0)
-#screen.setworldcoordinates(-200,-100,200,100)
+screen.setup(1307, 720)
+screen.setworldcoordinates(-180, -90, 180, 90)
 
-#remove close,minimaze,maximaze buttons:
+# Remove close,minimaze,maximaze buttons:
 canvas = screen.getcanvas()
 root = canvas.winfo_toplevel()
 root.overrideredirect(1)
@@ -42,7 +41,7 @@ while True:
     response = urllib.request.urlopen(url)
     result = json.loads(response.read())
 
-    #Extract location
+    # Extract location
     location = result['iss_position']
     lat = location['latitude']
     lon = location['longitude']
